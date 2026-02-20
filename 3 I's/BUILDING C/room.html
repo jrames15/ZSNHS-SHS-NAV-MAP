@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Room</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img class="logo" src="../images/LOGO.jpg" alt="logo">
+      <div>
+        <div class="title">Room</div>
+        <div style="color:#3b4656">Room details and media</div>
+      </div>
+    </div>
+
+    <div class="room-detail">
+      <div class="media-preview">
+        <img id="media-img" style="display:none" alt="room image">
+        <video id="media-vid" style="display:none" controls></video>
+        <div id="media-empty" class="placeholder">Add a photo or video file named exactly like the room (e.g., "Newton.jpg" or "Newton.mp4") into this folder.</div>
+      </div>
+      <div class="info">
+        <h3 id="room-title">Room</h3>
+        <div class="kv"><strong>Building:</strong> <span id="building-name">-</span></div>
+        <div class="kv"><strong>Room:</strong> <span id="room-name">-</span></div>
+        <div class="actions">
+          <a id="back" class="btn" href="index.html">Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      const q = Object.fromEntries(new URLSearchParams(location.search));
+      const room = q.room || 'Room';
+      const b = q.b || '';
+      document.getElementById('room-title').textContent = room;
+      document.getElementById('room-name').textContent = room;
+      document.getElementById('building-name').textContent = b;
+      const img = document.getElementById('media-img');
+      const vid = document.getElementById('media-vid');
+      const empty = document.getElementById('media-empty');
+      function showEmptyIfNone(){
+        setTimeout(()=>{
+          if((img.style.display=='' || img.style.display=='none') && (vid.style.display=='' || vid.style.display=='none')){
+            empty.style.display='block';
+          } else { empty.style.display='none'; }
+        },400);
+      }
+      const names = [`${room}.jpg`,`${room}.png`,`${room}.jpeg`,`${room}.webp`,`${room}.mp4`];
+      names.forEach(n=>{
+        const ext=n.split('.').pop().toLowerCase();
+        if(ext==='mp4'){
+          vid.src = n; vid.onerror = ()=>{}; vid.onloadeddata = ()=>{vid.style.display='block'; empty.style.display='none'};
+        } else {
+          img.src = n; img.onerror=()=>{}; img.onload = ()=>{img.style.display='block'; empty.style.display='none'};
+        }
+      });
+      showEmptyIfNone();
+    })();
+  </script>
+</body>
+</html>

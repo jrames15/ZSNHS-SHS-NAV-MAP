@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Building A</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- buildingData will be used by script.js to render rooms -->
+  </div>
+  <a id="back" class="btn" href="../index.html">Back</a>
+
+  <script>
+    window.buildingData = {
+      id: 'Building A',
+      name: 'Building A',
+      subtitle: 'Academic Building — 4 floors',
+      floors: [
+        {label:'4th Floor', name:'4th Floor', rooms:['Bagley','Rousseau','Dewey','Thoreau','John Locke']},
+        {label:'3rd Floor', name:'3rd Floor', rooms:['Aristotle','Mill','Socrates','Smith','Voltaire','Leibniz']},
+        {label:'2nd Floor', name:'2nd Floor', rooms:['Confucious','Emerson','Gautama','Lincolln','Sun Tzu','Michavelli']},
+        {label:'1st Floor', name:'1st Floor', rooms:['Marx','Bill Gates','Henry Ford','Larry Page','Stephen Covey','Elon Musk']}
+      ]
+    };
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>

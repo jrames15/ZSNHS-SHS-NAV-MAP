@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Navigation Map - ZSNHS-SHS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <img class="logo" src="images/LOGO.jpg" alt="logo">
+      <div>
+        <div class="title" id="pop-up">See Our School</div>
+        <div style="color:#3b4656" id="pop-up">Explore buildings, rooms and media.</div>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h2 style="margin-top:0;color:var(--maroon)" id="pop-up">Gallery & Overview</h2>
+      <div class="gallery" id="gallery">
+        <!-- Placeholders: you can replace these with your images/videos manually -->
+        <div class="media-item">
+          <img src="" alt="Picture of ZSNHS-SHS"></img>
+        </div>
+        <div class="media-item video-item">
+          <video src="" controls autoplay loop></video>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <a class="btn" href="#buildings" id="pop-up">Go to Buildings</a>
+      </div>
+    </section>
+
+    <section id="buildings">
+      <h2 style="color:var(--maroon);font-size:30px" id="pop-up">Buildings</h2>
+      <div class="buildings">
+        <div class="photo-bg" style="background-image:url('images/A/B-A.jpg')">
+          <a class="card" href="BUILDING A/index.html">
+            <h3 id="pop-up">Building A</h3>
+            <p id="pop-up">Academic rooms and lecture halls — 4 floors</p>
+          </a>
+        </div>
+        <div class="photo-bg" style="background-image:url('images/B/B-B.jpg')">
+          <a class="card" href="BUILDING B/index.html">
+            <h3 id="pop-up">Building B</h3>
+            <p id="pop-up">Administrative offices and registrar</p>
+          </a>
+        </div>
+        <div class="photo-bg" style="background-image:url('images/C/B-C.jpg')">
+          <a class="card" href="BUILDING C/index.html">
+            <h3 id="pop-up">Building C</h3>
+            <p id="pop-up">Labs, library and specialized rooms</p>
+          </a>
+        </div>
+        <div class="photo-bg" style="background-image:url('images/D/B-D.jpg')">
+          <a class="card" href="BUILDING D/index.html">
+            <h3 id="pop-up">Building D</h3>
+            <p id="pop-up">Junior High + other classrooms</p>
+          </a>
+        </div>
+    </section>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
